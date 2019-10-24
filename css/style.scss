@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #fad11f;
+
+    h1 {
+        font-family: 'Big Shoulders Text', cursive;
+        margin-bottom: 40px;
+        font-size: 60px;
+        font-weight: bold;
+        letter-spacing: 8px;
+    }
+
+    canvas {
+        background-color: black;
+    }
+}
+
+@media (max-width: 1100px) {
+    canvas {
+        width: 900px !important;
+    }
+}
+
+@media (max-width: 950px) {
+    canvas {
+        width: 700px !important;
+    }
+}
+
+@media (max-width: 750px) {
+    canvas {
+        width: 600px !important;
+    }
+}
+
+@media (max-width: 650px) {
+    canvas {
+        width: 490px !important;
+    }
+}
+
+
