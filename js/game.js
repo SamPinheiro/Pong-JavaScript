@@ -103,6 +103,10 @@ function score(whoScored) {
     bola.y = canvas.height / 2 - bola.altura / 2;
     bola.x = canvas.width / 2 - bola.largura / 2;
     bola.mod = 0;
+
+    // Teste de número maximo de pontos
+    if (direita.score == 10) encerraJogo('direita');
+    else if (esquerda.score == 10) encerraJogo('esquerda');
 };
 
 // Criando função que encerra jogo
@@ -144,10 +148,6 @@ function desenha() {
     // Desenhar o Score
     ctx.font = '60px Verdana';
     desenhaScore();
-
-    // Teste de número maximo de pontos
-    if (direita.score == 10) encerraJogo('direita');
-    else if (esquerda.score == 10) encerraJogo('esquerda');
 };
 
 // Desenhando Score
