@@ -14,7 +14,7 @@ var esquerda = {
     largura: 20,
     diry: 0,
     score: 0,
-    speed: 4
+    speed: 2
 };
 // Criando a barra da direita
 var direita = {
@@ -22,9 +22,8 @@ var direita = {
     largura: 20,
     x: canvas.width - 30,
     y: canvas.height / 2 - 150 / 2,
-    diry: 0,
     score: 0,
-    speed: 4
+    speed: 2
 };
 // Criando a bola
 var bola = {
@@ -54,10 +53,14 @@ function moveBloco() {
     else if (83 in teclas && esquerda.y + esquerda.altura < (canvas.height - 15))
         esquerda.y += esquerda.speed;
 
-    if (38 in teclas && direita.y > 15)
-        direita.y -= direita.speed;
-    else if (40 in teclas && direita.y + direita.altura < (canvas.height - 15))
-        direita.y += direita.speed;
+    if (gameMode == 1) {
+        direita.y += (bola.y - (direita.y + 60)) * 0.6;
+    } else if (gameMode == 2) {
+        if (38 in teclas && direita.y > 15)
+            direita.y -= direita.speed;
+        else if (40 in teclas && direita.y + direita.altura < (canvas.height - 15))
+            direita.y += direita.speed;
+    }
 };
 
 // Movimentação da bola
@@ -162,17 +165,15 @@ function gameLoop() {
 };
 
 // Desabilitando o botão e chamando o loop
-function comecaJogo() {
-    document.querySelector('button').style.display = 'none';
+function comecaJogo(modoJogo) {
+    document.querySelector('div').style.display = 'none';
+
+    if (modoJogo == 1) gameMode = modoJogo;
+    else if (modoJogo == 2) gameMode = modoJogo;
+
     gameLoop();
 };
 
-// Criando função que espera o click no botão para iniciar o jogo
-function esperaStart() {
-    const iniciar = document.getElementById('iniciar');
-    iniciar.addEventListener('click', comecaJogo);
-}
-
 // Criando o loop e chamando a função esperaStart 
 var loop;
-esperaStart();
+var gameMode;

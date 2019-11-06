@@ -1,3 +1,7 @@
+$yellow-color: #fad11f;
+$black-color: #000000;
+$white-color: #ffffff;
+
 * {
     margin: 0;
     padding: 0;
@@ -10,11 +14,10 @@ body {
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    background-color: #fad11f;
+    background-color: $yellow-color;
     font-family: 'Big Shoulders Text', cursive;
 
     h1 {
-        
         margin-bottom: 40px;
         font-size: 60px;
         font-weight: bold;
@@ -23,26 +26,33 @@ body {
 
     canvas {
         z-index: 1;
-        background-color: black;
+        background-color: $black-color;
+    }
+
+    div {
+        z-index: 2;
+        position: absolute;
+        
     }
 
     button {
-        z-index: 2;
-        position: absolute;
-        background-color: black;
-        color: white;
-        border: 1px solid white;
-        width: 120px;
-        height: 70px;
+        display: inline-block;
+        background-color: $black-color;
+        color: $white-color;
+        border: 1px solid $white-color;
+        width: 140px;
+        height: 80px;
         font-size: 30px;
         letter-spacing: 3px;
         font-family: 'Big Shoulders Text', cursive;
         transition: 0.5s;
+        margin: 5px;
     }
 
     button:hover {
         cursor: pointer;
-        opacity: 0.8;
+        color: $yellow-color;
+        border-color: $yellow-color;
     }
 
 }

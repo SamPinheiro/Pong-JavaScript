@@ -23,26 +23,32 @@ body h1 {
 
 body canvas {
   z-index: 1;
-  background-color: black;
+  background-color: #000000;
+}
+
+body div {
+  z-index: 2;
+  position: absolute;
 }
 
 body button {
-  z-index: 2;
-  position: absolute;
-  background-color: black;
-  color: white;
-  border: 1px solid white;
-  width: 120px;
-  height: 70px;
+  display: inline-block;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  width: 140px;
+  height: 80px;
   font-size: 30px;
   letter-spacing: 3px;
   font-family: 'Big Shoulders Text', cursive;
   transition: 0.5s;
+  margin: 5px;
 }
 
 body button:hover {
   cursor: pointer;
-  opacity: 0.8;
+  color: #fad11f;
+  border-color: #fad11f;
 }
 
 @media (max-width: 1550px) {
