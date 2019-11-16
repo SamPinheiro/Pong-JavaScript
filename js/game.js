@@ -108,8 +108,8 @@ function score(whoScored) {
     bola.mod = 0;
 
     // Teste de número maximo de pontos
-    if (direita.score == 10) encerraJogo('direita');
-    else if (esquerda.score == 10) encerraJogo('esquerda');
+    if (direita.score == 1) encerraJogo('direita');
+    else if (esquerda.score == 1) encerraJogo('esquerda');
 };
 
 // Criando função que encerra jogo
@@ -124,9 +124,7 @@ function encerraJogo(winner) {
         esquerda.score = 0;
         direita.score = 0;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        document.querySelector('button').style.display = 'block';
-
-        esperaStart();
+        document.querySelector('div').style.display = 'block';
     }
     //Para o loop
     clearInterval(loop);
